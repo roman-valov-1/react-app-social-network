@@ -4,26 +4,26 @@ const SET_USERS = 'SET-USERS';
 
 let initialState = {
    users: [
-      {
-         id: 1, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-         fullName: 'Dmitry Ivanov', status: 'Hello',
-         location: { city: 'Moscow', country: 'Russia' }
-      },
-      {
-         id: 2, followed: true, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-         fullName: 'Ivan Smirnov', status: 'Hello!',
-         location: { city: 'Ekaterinburg', country: 'Russia' }
-      },
-      {
-         id: 3, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-         fullName: 'Roman Popov', status: 'Hello!!',
-         location: { city: 'Saint-P', country: 'Russia' }
-      },
-      {
-         id: 4, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-         fullName: 'Alex Petrov', status: 'Hello!!!',
-         location: { city: 'Minsk', country: 'Belarus' }
-      }
+      // {
+      //    id: 1, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
+      //    fullName: 'Dmitry Ivanov', status: 'Hello',
+      //    location: { city: 'Moscow', country: 'Russia' }
+      // },
+      // {
+      //    id: 2, followed: true, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
+      //    fullName: 'Ivan Smirnov', status: 'Hello!',
+      //    location: { city: 'Ekaterinburg', country: 'Russia' }
+      // },
+      // {
+      //    id: 3, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
+      //    fullName: 'Roman Popov', status: 'Hello!!',
+      //    location: { city: 'Saint-P', country: 'Russia' }
+      // },
+      // {
+      //    id: 4, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
+      //    fullName: 'Alex Petrov', status: 'Hello!!!',
+      //    location: { city: 'Minsk', country: 'Belarus' }
+      // }
    ]
 }
 const usersReducer = (state = initialState, action) => {
