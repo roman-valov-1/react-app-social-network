@@ -1,30 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET-TOTAL-USERS-COUNT';
 
 let initialState = {
-   users: [
-      // {
-      //    id: 1, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-      //    fullName: 'Dmitry Ivanov', status: 'Hello',
-      //    location: { city: 'Moscow', country: 'Russia' }
-      // },
-      // {
-      //    id: 2, followed: true, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-      //    fullName: 'Ivan Smirnov', status: 'Hello!',
-      //    location: { city: 'Ekaterinburg', country: 'Russia' }
-      // },
-      // {
-      //    id: 3, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-      //    fullName: 'Roman Popov', status: 'Hello!!',
-      //    location: { city: 'Saint-P', country: 'Russia' }
-      // },
-      // {
-      //    id: 4, followed: false, avatarUrl: 'https://variety.com/wp-content/uploads/2017/06/rexfeatures_5884729u.jpg',
-      //    fullName: 'Alex Petrov', status: 'Hello!!!',
-      //    location: { city: 'Minsk', country: 'Belarus' }
-      // }
-   ]
+   users: [],
+   pageSize: 100,
+   totalUsersCount: 0,
+   currentPage: 1
 }
 const usersReducer = (state = initialState, action) => {
    switch (action.type) {
@@ -51,8 +35,18 @@ const usersReducer = (state = initialState, action) => {
       case SET_USERS:
          return {
             ...state,
-            users: [...state.users, ...action.users]
+            users: action.users
          };
+      case SET_CURRENT_PAGE:
+         return {
+            ...state,
+            currentPage: action.currentPage
+         };
+      case SET_TOTAL_USERS_COUNT:
+         return {
+            ...state,
+            totalUsersCount: action.totalUsersCount
+         }
       default:
          return state;
    }
@@ -76,5 +70,17 @@ export const setUsersAC = (users) => {
       users: users
    }
 };
+export const setCurrentPageAC = (currentPage) => {
+   return {
+      type: SET_CURRENT_PAGE,
+      currentPage: currentPage
+   }
+};
+export const setTotalUsersCountAC = (totalUsersCount) => {
+   return{
+      type: SET_TOTAL_USERS_COUNT,
+      totalUsersCount: totalUsersCount
+   }
+}
 
 export default usersReducer;
