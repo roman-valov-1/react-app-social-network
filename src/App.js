@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
@@ -9,6 +8,7 @@ import MessagesContainer from './components/Messages/MessagesContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import UsersContainer from './components/Users/UsersContainer';
+import Login from './components/Login/Login';
 
 const App = () => {
 	return (
@@ -25,6 +25,7 @@ const App = () => {
 						render={ () => <UsersContainer /> }/>
 					<Route path='/news' render={ () => <News />} />
 					<Route path='/music' render={ () => <Music /> }/>
+					<Route path='/login' render={ () => <Login /> }/>
 				</div>
 			</div>
 		</BrowserRouter>
