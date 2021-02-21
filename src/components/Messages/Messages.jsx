@@ -2,21 +2,33 @@ import React from 'react';
 import classes from './Messages.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { Form, Field } from 'react-final-form';
 
+const AddMessageForm = (props) => {
+   return <Form
+      onSubmit={props.onSubmit}
+      render={({ handleSubmit }) => (
+         <form onSubmit={handleSubmit}>
+            <div>
+               <Field name="Text" component="textarea" placeholder="Enter your message" />
+            </div>
+            <div>
+               <button type="submit" >Send</button>
+            </div>
+         </form>
+      )}
+   />
+}
 
 const Messages = (props) => {
    let dialogesElements = props.dialogesData
-      .map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
+      .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
 
    let messagesElements = props.messagesData
-      .map( message => <Message message={message.message}/> );
-   
-   let onMessageChange = (e) => {
-      let text = e.target.value;
-      props.updateNewMessageText(text);
-   }
-   let onSendNewMessage = () => {
-      props.sendNewMessage();
+      .map(message => <Message message={message.message} />);
+
+   let onSubmit = (value) => {
+      props.sendNewMessage(value.Text);
    };
 
    return (
@@ -27,15 +39,13 @@ const Messages = (props) => {
          <div className={classes.messages}>
             {messagesElements}
             <div>
-               <div>
-                  <textarea onChange={onMessageChange} 
-                  value={props.newMessageText} />
-               </div>
-               <button onClick={onSendNewMessage}>Send</button>
+               <AddMessageForm onSubmit={onSubmit}/>
             </div>
          </div>
       </div>
    );
 }
+
+
 
 export default Messages;

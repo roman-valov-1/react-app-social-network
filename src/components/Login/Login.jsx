@@ -14,7 +14,7 @@ const LoginForm = (props) => (
                <Field name="Password" component="input" placeholder="Password" />
             </div>
             <div>
-               <Field name="rememberMe" component="input" type="checkbox" /> remember me
+               <Field name="RememberMe" component="input" type="checkbox" /> remember me
             </div>
             <div>
                <button type="submit" >Sign in</button>

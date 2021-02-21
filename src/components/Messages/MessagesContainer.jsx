@@ -1,7 +1,6 @@
 import Messages from './Messages';
 import {
-   sendNewMessageActionCreator,
-   updateNewMessageTextActionCreator
+   sendNewMessageActionCreator
 } from '../../Redux/messages-reducer';
 import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
@@ -17,11 +16,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
    return {
-      sendNewMessage: () => {
-         dispatch(sendNewMessageActionCreator());
-      },
-      updateNewMessageText: (text) => {
-         dispatch(updateNewMessageTextActionCreator(text));
+      sendNewMessage: (newMessageText) => {
+         dispatch(sendNewMessageActionCreator(newMessageText));
       }
    }
 }
