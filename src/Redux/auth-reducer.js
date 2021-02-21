@@ -34,4 +34,13 @@ export const getAuthUserData = () => (dispatch) => {
       });
 }
 
+export const autorizationUser = (email, password, rememberMe) => {
+   authAPI.autorization(email, password, rememberMe)
+      .then(response => {
+         if(response.data.resultCode === 0) {
+            getAuthUserData();
+         }
+      });
+}
+
 export default authReducer;

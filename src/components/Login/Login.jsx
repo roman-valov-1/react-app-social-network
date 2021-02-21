@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
+import {autorizationUser} from './../../Redux/auth-reducer';
 
 
 const LoginForm = (props) => (
@@ -8,7 +9,7 @@ const LoginForm = (props) => (
       render={({ handleSubmit }) => (
          <form onSubmit={handleSubmit}>
             <div>
-               <Field name="Login" component="input" placeholder="Login" />
+               <Field name="Email" component="input" placeholder="Email" />
             </div>
             <div>
                <Field name="Password" component="input" placeholder="Password" />
@@ -26,7 +27,7 @@ const LoginForm = (props) => (
 
 const Login = (props) => {
    const onSubmit = ( formData ) => {
-      console.log(formData);
+      autorizationUser(formData.Email, formData.Password, formData.RememberMe);
    }
    return <div>
       <h1>Login</h1>
