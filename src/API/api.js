@@ -40,6 +40,9 @@ export const authAPI = {
       return instance.get(`auth/me`);
    },
    autorization(email, password, rememberMe = false) {
-      return instance.post(`auth/login/`, {email: email, password: password, rememberMe: rememberMe});
+      return instance.post(`auth/login/`, {email, password, rememberMe});
+   },
+   logout() {
+      return instance.delete(`auth/login/`);
    }
 }
