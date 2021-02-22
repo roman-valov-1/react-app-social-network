@@ -2,6 +2,8 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 import { Form, Field } from 'react-final-form';
+import {required, maxLengthCreator} from './../../../utils/validators/validators';
+import Textarea from './../../Common/FormsControls/Textarea';
 
 const NewPostForm = (props) => {
    return <Form 
@@ -9,7 +11,8 @@ const NewPostForm = (props) => {
       render = {({ handleSubmit }) => (
       <form onSubmit={handleSubmit}>
          <div>
-            <Field name="NewPostText" component="textarea" placeholder="What's new?"/>
+            <Field name="NewPostText" component={Textarea} placeholder="What's new?" 
+               validate={required, maxLengthCreator(20)} />
          </div>
          <div>
             <button type="submit" >Add post</button>

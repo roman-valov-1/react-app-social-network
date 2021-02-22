@@ -3,6 +3,8 @@ import classes from './Messages.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import { Form, Field } from 'react-final-form';
+import Textarea from './../Common/FormsControls/Textarea';
+import {required, maxLengthCreator} from './../../utils/validators/validators';
 
 const AddMessageForm = (props) => {
    return <Form
@@ -10,7 +12,8 @@ const AddMessageForm = (props) => {
       render={({ handleSubmit }) => (
          <form onSubmit={handleSubmit}>
             <div>
-               <Field name="Text" component="textarea" placeholder="Enter your message" />
+               <Field name="Text" component={Textarea} placeholder="Enter your message" 
+                  validate={required, maxLengthCreator(20)} />
             </div>
             <div>
                <button type="submit" >Send</button>
