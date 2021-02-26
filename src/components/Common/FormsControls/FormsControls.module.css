@@ -9,3 +9,6 @@
 .formControl.error span {
    color: red;
 }
+.formAuthError {
+   color: red;
+}
