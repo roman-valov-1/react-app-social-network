@@ -5,8 +5,8 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 const Profile = (props) => {
    return (
       <section>
-         <ProfileInfo profile={props.profile} status={props.status} 
-         updateStatus={props.updateStatus}/>
+         <ProfileInfo isOwner={props.isOwner} profile={props.profile} status={props.status} 
+         updateStatus={props.updateStatus} savePhotoToServer={props.savePhotoToServer}/>
          <MyPostsContainer />
       </section>
    );
