@@ -6,7 +6,7 @@ const Users = (props) => {
 
    return (
       <section>
-         <Paginator totalUsersCount={props.totalUsersCount} 
+         <Paginator totalItemsCount={props.totalUsersCount} 
             pageSize={props.pageSize} 
             currentPage={props.currentPage}
             onPageChanged={props.onPageChanged}/>

@@ -24,7 +24,7 @@ const NewPostForm = (props) => {
 
 const MyPosts = (props) => {
    let postsElements = props.postsData
-      .map((post) => <Post message={post.message} likesCount={post.likesCount} />);
+      .map((post) => <Post message={post.message} likesCount={post.likesCount} />).reverse();
 
    let onSubmit = (value) => {
       props.addPost(value.NewPostText);
