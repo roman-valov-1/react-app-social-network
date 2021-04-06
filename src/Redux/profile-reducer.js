@@ -43,7 +43,7 @@ const profileReducer = (state = initialState, action) => {
       case SAVE_PHOTO_SUCCESS:
          return {
             ...state,
-            profile: {...state.profile, photos: action.photos}
+            profile: { ...state.profile, photos: action.photos }
          }
       default:
          return state;
@@ -72,34 +72,34 @@ export const savePhotoToServerSuccess = (photos) => {
 
 export const getUserProfile = (userId) => async (dispatch) => {
    let response = await profileAPI.getProfile(userId);
-      dispatch(setUserProfile(response.data));
+   dispatch(setUserProfile(response.data));
 }
 
 export const getStatus = (userId) => async (dispatch) => {
    let response = await profileAPI.getStatus(userId);
-      dispatch(setStatus(response.data));
+   dispatch(setStatus(response.data));
 }
 
 export const updateStatus = (status) => async (dispatch) => {
    let response = await profileAPI.updateStatus(status);
-      if (response.data.resultCode === 0) {
-         dispatch(setStatus(status));
-      }
+   if (response.data.resultCode === 0) {
+      dispatch(setStatus(status));
+   }
 }
 
 export const savePhotoToServer = (file) => async (dispatch) => {
    let response = await profileAPI.savePhotoToServer(file);
-      if (response.data.resultCode === 0) {
-         dispatch(savePhotoToServerSuccess(response.data.data.photos));
-      }
+   if (response.data.resultCode === 0) {
+      dispatch(savePhotoToServerSuccess(response.data.data.photos));
+   }
 }
 
 export const saveProfile = (profile) => async (dispatch, getState) => {
    let userId = getState().auth.userId;
    let response = await profileAPI.saveProfile(profile);
-      if (response.data.resultCode === 0) {
-         dispatch(getUserProfile(userId));
-      }
+   if (response.data.resultCode === 0) {
+      dispatch(getUserProfile(userId));
+   } 
 }
 
 export default profileReducer;

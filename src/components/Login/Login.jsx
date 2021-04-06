@@ -29,6 +29,9 @@ const LoginForm = (props) => (
                ? <span className={classes.formAuthError}> {props.authError} </span>
                : undefined
             }
+            { props.captchaUrl && <div><img src={props.captchaUrl}/></div>}
+            { props.captchaUrl && 
+               <Field name="captcha" component={Input} placeholder="Symbols from image"  validate={required}/>}
             <div>
                <button type="submit" >Sign in</button>
             </div>
@@ -39,7 +42,12 @@ const LoginForm = (props) => (
 
 const Login = (props) => {
    const onSubmit = (formData) => {
-      props.autorizationUser(formData.Email, formData.Password, formData.RememberMe);
+      props.autorizationUser(
+         formData.Email, 
+         formData.Password, 
+         formData.RememberMe, 
+         formData.captcha
+      );
    }
 
    if (props.isAuth) {
@@ -48,13 +56,17 @@ const Login = (props) => {
 
    return <div>
       <h1>Login</h1>
-      <LoginForm onSubmit={onSubmit} authError={props.authError} />
+      <LoginForm 
+         onSubmit={onSubmit} 
+         authError={props.authError}
+         captchaUrl={props.captchaUrl} />
    </div>
 }
 
 const mapStateToProps = (state) => ({
    isAuth: state.auth.isAuth,
-   authError: state.auth.authError
+   authError: state.auth.authError,
+   captchaUrl: state.auth.captchaUrl
 })
 
 export default connect(mapStateToProps, { autorizationUser })(Login);
