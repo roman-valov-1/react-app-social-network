@@ -24,19 +24,25 @@ const Paginator = (props) => {
 
    return (
          <div className={classes.paginationItem}>
-            <button
-               disabled={paginationLeftButtonDisabled(groupPagesNumber)} 
-               onClick={() => {setGroupPagesNumber(groupPagesNumber - 1)} }>Prev</button>
-            {pages
-               .filter(group => group >= leftGroupPagesLimit && group <= rightGroupPagesLimit)
-               .map(page => {
-               return <span 
-                  className={(props.currentPage === page && classes.selectedPage)}
-                  onClick={(e) => { props.onPageChanged(page); }}>{page}</span>
-            })}
-            <button
-               disabled={paginationRightButtonDisabled(groupPagesNumber)} 
-               onClick={() => {setGroupPagesNumber(groupPagesNumber + 1)} }>Next</button>
+            <div className={classes.button}>
+               <button
+                  disabled={paginationLeftButtonDisabled(groupPagesNumber)} 
+                  onClick={() => {setGroupPagesNumber(groupPagesNumber - 1)} }>Prev</button>
+            </div>
+            <div className={classes.paginationList}>
+               {pages
+                  .filter(group => group >= leftGroupPagesLimit && group <= rightGroupPagesLimit)
+                  .map(page => {
+                  return <span 
+                     className={(props.currentPage === page && classes.selectedPage)}
+                     onClick={(e) => { props.onPageChanged(page); }}>{page}</span>
+               })}
+            </div>
+            <div className={classes.button}>
+               <button
+                  disabled={paginationRightButtonDisabled(groupPagesNumber)} 
+                  onClick={() => {setGroupPagesNumber(groupPagesNumber + 1)} }>Next</button>
+            </div>
          </div>
    )
 }

@@ -6,6 +6,7 @@ import { required } from './../../utils/validators/validators';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import classes from './../Common/FormsControls/FormsControls.module.css';
+import loginClasses from './Login.module.css';
 
 
 
@@ -14,16 +15,16 @@ const LoginForm = (props) => (
       onSubmit={props.onSubmit}
       render={({ handleSubmit }) => (
          <form onSubmit={handleSubmit}>
-            <div>
+            <div className={classes.item}>
                Email: <Field name="Email" component={Input} placeholder="Email"
                   validate={required} />
             </div>
-            <div>
+            <div className={classes.item}>
                Password: <Field name="Password" component={Input} type="password" placeholder="Password"
                   validate={required} />
             </div>
-            <div>
-               <Field name="RememberMe" component={Input} type="checkbox" /> remember me
+            <div className={classes.itemCheckbox}>
+               <Field name="RememberMe" component={Input} type="checkbox" /> <span>Remember me</span>
             </div>
             {(props.authError)
                ? <span className={classes.formAuthError}> {props.authError} </span>
@@ -33,7 +34,7 @@ const LoginForm = (props) => (
             { props.captchaUrl && 
                <Field name="captcha" component={Input} placeholder="Symbols from image"  validate={required}/>}
             <div>
-               <button type="submit" >Sign in</button>
+               <button className={classes.button} type="submit" >Sign in</button>
             </div>
          </form>
       )}
@@ -54,8 +55,8 @@ const Login = (props) => {
       return <Redirect to={"/profile"} />
    }
 
-   return <div>
-      <h1>Login</h1>
+   return <div className={loginClasses.container}>
+      <div className={loginClasses.title}>Authorization</div>
       <LoginForm 
          onSubmit={onSubmit} 
          authError={props.authError}

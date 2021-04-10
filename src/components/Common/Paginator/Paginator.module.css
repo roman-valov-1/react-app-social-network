@@ -1,9 +1,41 @@
+.paginationItem {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 15px;
+}
 .selectedPage {
    font-weight: bold;
+   color: #0004e0cc !important;
+	border-color:#0004e0cc !important;
+   background-color:  #03054b05 !important;
 }
-.paginationItem span{
+.paginationList span{
    display: inline-block;
-   padding: 0px 5px;
+   width: 50px;
+   text-align: center;
    margin: 3px;
-   border: 1px red solid;
+}
+.button {
+   margin: 0px 10px;
+}
+.button button,
+.paginationItem span{
+   font-size: 0.9rem;
+	font-weight: 600;
+	color: #2a323a;
+	text-decoration: none;
+	padding: 1px 10px 4px 10px;
+	border: 2px solid #2a323a;
+	border-radius: 3px;
+}
+.button button:hover,
+.button button:focus,
+.paginationItem span:hover {
+   outline: none;
+	color: #0004e0cc;
+	border-color:#0004e0cc;
+	transition: 0.2s;
+	background-color:  #03054b05;
+	cursor: pointer;
 }

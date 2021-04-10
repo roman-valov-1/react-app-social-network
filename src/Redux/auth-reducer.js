@@ -65,9 +65,10 @@ export const autorizationUser = (email, password, rememberMe, captcha) => async 
 
       let messageError = response.data.messages.length > 0
          ? response.data.messages[0] : "Some Error";
-      dispatch(setAuthError(messageError))
+      dispatch( setAuthError(messageError) )    
    }
 }
+
 
 export const logout = () => async (dispatch) => {
    let response = await authAPI.logout();

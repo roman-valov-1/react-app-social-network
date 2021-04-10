@@ -1,19 +1,38 @@
-.header {
-	grid-area: h;
-	background-color: #856FD7;
+.headerWrapper {
+	background-color: #fff;
+	padding: 15px 15px;
+	box-shadow: 0px 3px 7px 0px rgba(11, 12, 13, 0.2);
 }
-.header img {
-	width: 50px;
-	height: 50px;
+.headerContent {
+	max-width: 1180px;
+	margin: 0 auto;
+	color:#0004e0cc;
 }
-.loginBlock {
-	float: right;
+.headerFlexContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
-.loginBlock a {
-	color: black;
+.logo{
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+.loginBlock a,
+.loginBlock button {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #2a323a;
 	text-decoration: none;
+	padding: 1px 10px 4px 10px;
+	border: 2px solid #2a323a;
+	border-radius: 3px;
 }
-.loginBlock a:hover {
-	color: white;
+.loginBlock a:hover,
+.loginBlock button:hover {
+	color: #0004e0cc;
+	border-color:#0004e0cc;
 	transition: 0.2s;
+	background-color:  #03054b05;
+	cursor: pointer;
 }

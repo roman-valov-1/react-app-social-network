@@ -4,7 +4,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
    return (
-      <section>
+      <section className={classes.profileContainer}>
          <ProfileInfo 
             isOwner={props.isOwner} 
             profile={props.profile} 
@@ -12,7 +12,7 @@ const Profile = (props) => {
             updateStatus={props.updateStatus} 
             savePhotoToServer={props.savePhotoToServer}
             saveProfile={props.saveProfile}/>
-         <MyPostsContainer />
+         <MyPostsContainer isOwner={props.isOwner} />
       </section>
    );
 }

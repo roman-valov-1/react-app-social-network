@@ -6,15 +6,15 @@ import classes from './Users.module.css';
 const User = (props) => {
    let user = props.user;
    return (
-      <div>
-         <span>
+      <div className={classes.userItem}>
+         <div className={classes.userAvatarBlock}>
             <div>
                <NavLink to={'/profile/' + user.id}>
                   <img src={user.photos.small != null
                      ? user.photos.small : userPhoto} className={classes.avatar} />
                </NavLink>
             </div>
-            <div>
+            <div className={classes.button}>
                {user.followed
                   ? <button disabled={props.followingInProgress
                      .some(id => id === user.id)} onClick={() => {
@@ -25,25 +25,15 @@ const User = (props) => {
                         props.follow(user.id);
                      }}>Follow</button>}
             </div>
-         </span>
-         <span>
+         </div>
+         <div className={classes.userDescription}>
             <span>
-               <div>
-                  {user.name}
-               </div>
-               <div>
-                  {user.status}
-               </div>
+               <b>FullName: </b>{user.name}
             </span>
             <span>
-               <div>
-                  {"user.location.country"}
-               </div>
-               <div>
-                  {"user.location.city"}
-               </div>
+               <b>Status: </b>{user.status}
             </span>
-         </span>
+         </div>  
       </div>      
    )
 }

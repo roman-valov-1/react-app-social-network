@@ -1,7 +1,13 @@
+.item {
+   margin-bottom: 10px;
+}
 .item a{
    text-decoration: none;
-   color: white;
+   color: #2a323a;
+}
+.item a:hover {
+   color: #0004e0cc;
 }
 .item a.active{
-   color:gold;
+   color: #0004e0cc;
 }

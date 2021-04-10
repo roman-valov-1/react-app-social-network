@@ -1,9 +1,97 @@
+.profileInfoContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.profileInfoAvatar {
+	padding: 10px 20px 20px 20px;
+	max-width: 250px;
+	max-height: 250px;
+	font-size: 1rem;
+}
+.profileInfoAvatar span{
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 5px;
+	font-size: 1rem;
+}
+.profileInfoAvatar input{
+	max-width: 200px;
+}
+.profileStatus {
+	font-size: 1.1rem;
+	display: block;
+	margin-bottom: 10px;
+}
 .descriptionBlock {
+	width: 70%;
 	padding: 10px;
 }
 .image {
-	width: 150px;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+}
+.profileUserDataItem {
+	font-size: 1rem;
+	margin-bottom: 5px;
+	word-wrap: break-word;
+}
+.profileUserDataItem input{
+	outline: none;
+	font-size: 1rem;
+	padding: 3px 10px;
+	margin-top: 5px;
+	border: 2px solid #2a323a;
+	border-radius: 3px;
+}
+.profileUserDataItem textarea{
+	outline: none;
+	font-size: 1rem;
+	max-width: 300px;
+	height: 100px;
+	padding: 3px 10px;
+	margin-top: 5px;
+	resize: none;
+	border: 2px solid #2a323a;
+	border-radius: 3px;
+	
+}
+.profileUserDataItem input:hover,
+.profileUserDataItem textarea:hover {
+	border-color:#0004e0cc;
+	transition: 0.2s;
+}
+.profileUserDataItem input:focus,
+.profileUserDataItem textarea:focus {
+	border-color:#0004e0cc;
+}
+.arrow {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.contactsBlock {
+	display: none;
 }
 .contact {
-	padding-left: 10px;
+	margin-bottom: 3px;
+}
+.button {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #2a323a;
+	text-decoration: none;
+	padding: 1px 10px 4px 10px;
+	border: 2px solid #2a323a;
+	border-radius: 3px;
+}
+.button:hover {
+	color: #0004e0cc;
+	border-color:#0004e0cc;
+	transition: 0.2s;
+	background-color:  #03054b05;
+	cursor: pointer;
 }

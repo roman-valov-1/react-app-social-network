@@ -8,25 +8,25 @@ const ProfileUserDataForm = (props) => (
       initialValues={props.profile}
       render={({ handleSubmit }) => (
          <form onSubmit={handleSubmit}>
-            <div>
+            <div className={classes.profileUserDataItem}>
                Full name: <Field name="fullName" component={Input} placeholder="Full name" />
             </div>
-            <div>
+            <div className={classes.profileUserDataItem}>
                Looking for a job: <Field name="lookingForAJob" component="input" type="checkbox" />
             </div>
-            <div>
+            <div className={classes.profileUserDataItem}>
                My professional skills:
                   <Field name="lookingForAJobDescription"
                   component={Textarea}
                   placeholder="Describe your skills" />
             </div>
-            <div>
+            <div className={classes.profileUserDataItem}>
                About me:
                   <Field name="aboutMe"
                   component={Textarea}
                   placeholder="Information about you" />
             </div>
-            <div>
+            <div className={classes.profileUserDataItem}>
                Contacts: {Object.keys(props.profile.contacts).map(key => {
                   return <div className={classes.contact}>
                      {key}: 
@@ -37,7 +37,7 @@ const ProfileUserDataForm = (props) => (
                })}
             </div>
             <div>
-               <button type="submit">Save</button>
+               <button className={classes.button}type="submit">Save</button>
             </div>
          </form>
       )}
