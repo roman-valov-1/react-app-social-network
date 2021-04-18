@@ -18,6 +18,11 @@
 	font-size: 1.5rem;
 	font-weight: 600;
 }
+.logoSmall{
+	display: none;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
 .loginBlock a,
 .loginBlock button {
 	font-size: 1.1rem;
@@ -35,4 +40,16 @@
 	transition: 0.2s;
 	background-color:  #03054b05;
 	cursor: pointer;
+}
+
+@media (max-width: 575.99px) {
+	.logo{
+		display: none;
+	}
+	.logoSmall{
+		display: block;
+	}
+	.loginBlock button {
+		font-size: 1rem;
+	}
 }

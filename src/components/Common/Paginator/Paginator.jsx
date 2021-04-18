@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from './Paginator.module.css';
 
 const Paginator = (props) => {
@@ -8,8 +8,9 @@ const Paginator = (props) => {
    for (let i = 1; i <= pagesCount; i++) {
       pages.push(i);
    }
+   
+   let pagesPerGroup = 5;
 
-   let pagesPerGroup = 10;
    let totalPagesGroupCount = Math.ceil(pagesCount / pagesPerGroup);
 
    let [groupPagesNumber, setGroupPagesNumber] = useState(1);
@@ -24,11 +25,7 @@ const Paginator = (props) => {
 
    return (
          <div className={classes.paginationItem}>
-            <div className={classes.button}>
-               <button
-                  disabled={paginationLeftButtonDisabled(groupPagesNumber)} 
-                  onClick={() => {setGroupPagesNumber(groupPagesNumber - 1)} }>Prev</button>
-            </div>
+            
             <div className={classes.paginationList}>
                {pages
                   .filter(group => group >= leftGroupPagesLimit && group <= rightGroupPagesLimit)
@@ -38,10 +35,17 @@ const Paginator = (props) => {
                      onClick={(e) => { props.onPageChanged(page); }}>{page}</span>
                })}
             </div>
-            <div className={classes.button}>
+            <div className={classes.buttonsBlock}>
+               <div className={classes.buttonPrev}>
+                  <button
+                     disabled={paginationLeftButtonDisabled(groupPagesNumber)} 
+                     onClick={() => {setGroupPagesNumber(groupPagesNumber - 1)} }>Prev</button>
+               </div>
+               <div className={classes.buttonNext}>
                <button
                   disabled={paginationRightButtonDisabled(groupPagesNumber)} 
                   onClick={() => {setGroupPagesNumber(groupPagesNumber + 1)} }>Next</button>
+               </div>
             </div>
          </div>
    )

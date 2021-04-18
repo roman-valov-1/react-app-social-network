@@ -32,3 +32,21 @@
 	align-self: flex-end;
 	color: #0004e0cc;
 }
+
+@media (max-width: 575.98px) {
+	.itemContainer {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.itemAuthor {
+		border-right: none;
+	}
+	.itemAuthor img {
+		width: 50px;
+		height: 50px;
+	}
+	.itemTextContainer {
+		width: 100%;
+		border-top: 1px solid #0004e0cc;
+	}
+}

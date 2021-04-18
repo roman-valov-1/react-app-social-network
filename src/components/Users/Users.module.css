@@ -17,7 +17,7 @@
    width: 300px;
    background-color: #ccc5c552;
    padding: 10px;
-   margin-bottom: 20px;
+   margin: 20px 5px;
    border-radius: 3px;
 }
 .userAvatarBlock {
@@ -57,4 +57,24 @@
 .userDescription span{
    display: inline-block;
    margin-bottom: 5px;
+}
+
+@media (max-width: 575.98px) {
+   .userItem {
+      width: 260px;
+      padding: 10px;
+      margin: 10px 5px;
+   }
+   .avatar {
+      width: 80px;
+      height: 80%;
+   }
+}
+
+@media (max-width: 767.99px) {
+   .usersList {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }

@@ -23,6 +23,14 @@
 	font-size: 1.1rem;
 	display: block;
 	margin-bottom: 10px;
+	word-wrap: break-word;
+	max-width: 400px;
+}
+.profileStatusEdit textarea{
+	font-size: 1rem;
+	resize: none;
+	width: 400px;
+	height: 50px;
 }
 .descriptionBlock {
 	width: 70%;
@@ -94,4 +102,26 @@
 	transition: 0.2s;
 	background-color:  #03054b05;
 	cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+	.profileInfoContainer {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.descriptionBlock {
+		width: 90%;
+		margin-top: 40px;
+	}
+	.profileStatus {
+		font-size: 0.9rem;
+		max-width: 250px;
+	}
+	.profileStatusEdit textarea{
+		font-size: 0.9rem;
+		width: 250px;
+		height: 40px;
+	}
 }

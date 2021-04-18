@@ -44,3 +44,15 @@
 	background-color:  #03054b05;
 	cursor: pointer;
 }
+
+@media (max-width: 575.98px) {
+   .dialogesItems {
+      width: 130px;
+   }
+   .dialogesItems,
+   .messages,
+   .textarea,
+   .button {
+      font-size: 0.9rem;
+   }
+}

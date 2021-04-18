@@ -22,3 +22,37 @@
 .item a.active {
 	color: #0004e0cc;
 }
+@media (max-width: 575.98px) {
+	.item a{
+		font-size: 0.8rem;
+	}
+}
+@media (max-width: 767.99px) {
+	.nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		padding: 5px 20px;
+		margin: 0px;
+		box-shadow: none;
+		border-radius: 0px;
+		background-color: #0004e0;
+	}
+	.item {
+		padding: 5px 0px;
+		color: #2a323a;
+	}
+	.item a {
+		color: #fff;
+	}
+	.item a:hover {
+		color: rgb(42, 250, 240);
+	}
+	.item a.active {
+		color: rgb(42, 250, 240);
+	}
+}

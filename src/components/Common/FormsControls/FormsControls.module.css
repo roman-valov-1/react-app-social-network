@@ -1,5 +1,4 @@
 .formControl {
-
 }
 .formControl.error input,
 .formControl.error textarea {
@@ -20,7 +19,7 @@
 }
 .item input{
    font-family: sans-serif;
-   width: 280px;
+   width: 260px;
    font-size: 1rem;
    margin: 5px 0px;
    padding: 5px 10px;

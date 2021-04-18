@@ -11,9 +11,7 @@ let initialState = {
    messagesData: [
       { id: 1, message: "Hi" },
       { id: 2, message: "How are you?" },
-      { id: 3, message: "Yo" },
-      { id: 4, message: "Yo" },
-      { id: 5, message: "Yo" }
+      { id: 3, message: "Yo" }
    ]
 }
 

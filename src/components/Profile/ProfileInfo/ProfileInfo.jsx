@@ -35,7 +35,8 @@ const ProfileInfo = (props) => {
          <div className={classes.descriptionBlock}>
             <ProfileStatusWithHooks
                status={props.status}
-               updateStatus={props.updateStatus} />
+               updateStatus={props.updateStatus}
+               isOwner={props.isOwner} />
             {editMode
                ? <ProfileUserDataForm
                   profile={props.profile}

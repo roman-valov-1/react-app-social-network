@@ -7,6 +7,7 @@ const Header = (props) => {
          <div className={classes.headerContent}>
             <div className={classes.headerFlexContainer}>
                <div className={classes.logo}>React Social Network</div>
+               <div className={classes.logoSmall}>RSN</div>
                <div className={classes.loginBlock}>
                   {props.isAuth
                      ? <div><button onClick={props.logout}>Log out</button></div>
