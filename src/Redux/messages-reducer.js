@@ -22,7 +22,8 @@ const messagesReducer = (state = initialState, action) => {
          
          return {
             ...state,
-            messagesData: [...state.messagesData, { id: 6, message: messageText }]
+            messagesData: [...state.messagesData, 
+               { id: (state.messagesData.length + 1), message: messageText }]
          };
       default:
          return state;
