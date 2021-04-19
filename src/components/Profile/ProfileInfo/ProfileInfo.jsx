@@ -10,7 +10,6 @@ const ProfileInfo = (props) => {
    let [editMode, setEditMode] = useState(false);
 
    const onSubmit = (formData) => {
-      console.log(formData);
       setEditMode(false);
       props.saveProfile(formData);
    }
@@ -73,7 +72,7 @@ const ProfileUserData = (props) => {
          <div className={classes.profileUserDataItem}>
             <b>Contacts: </b>
                {Object.keys(props.profile.contacts).map(key => {
-                  return <Contact contactTitle={key} contactValue={props.profile.contacts[key]} />
+                  return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]} />
                })}
             
          </div>

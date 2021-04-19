@@ -28,7 +28,7 @@ const ProfileUserDataForm = (props) => (
             </div>
             <div className={classes.profileUserDataItem}>
                Contacts: {Object.keys(props.profile.contacts).map(key => {
-                  return <div className={classes.contact}>
+                  return <div key={key} className={classes.contact}>
                      {key}: 
                      <div>
                         <Field name={"contacts." + key} component="input" placeholder={key} />

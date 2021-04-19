@@ -30,8 +30,8 @@ const Paginator = (props) => {
                {pages
                   .filter(group => group >= leftGroupPagesLimit && group <= rightGroupPagesLimit)
                   .map(page => {
-                  return <span 
-                     className={(props.currentPage === page && classes.selectedPage)}
+                  return <span key={page}
+                     className={(props.currentPage === page ? classes.selectedPage : undefined)}
                      onClick={(e) => { props.onPageChanged(page); }}>{page}</span>
                })}
             </div>

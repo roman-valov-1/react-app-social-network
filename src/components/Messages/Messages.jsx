@@ -25,10 +25,10 @@ const AddMessageForm = (props) => {
 
 const Messages = (props) => {
    let dialogesElements = props.dialogesData
-      .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
+      .map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />);
 
    let messagesElements = props.messagesData
-      .map(message => <Message message={message.message} />);
+      .map(message => <Message key={message.id} message={message.message} />);
 
    let onSubmit = (value) => {
       props.sendNewMessage(value.Text);
