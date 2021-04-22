@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { HashRouter, Redirect, Route } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -25,7 +25,7 @@ class App extends React.Component {
 		}
 
 		return (
-			<BrowserRouter>
+			<HashRouter basename={process.env.PUBLIC_URL}>
 				<div className="app-wrapper">
 					<HeaderContainer />
 					<div className="app-content-wrapper">
@@ -52,7 +52,7 @@ class App extends React.Component {
 						</div>
 					</div>
 				</div>
-			</BrowserRouter>
+			</HashRouter>
 		);
 	}
 }
