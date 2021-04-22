@@ -4,8 +4,10 @@ import classes from './Preloader.module.css'
 
 const Preloader = (props) => {
    return (
-      <div className={classes.preloader}>
-         <img src={preloader}></img>
+      <div className={classes.preloaderContainer}>
+         <div className={classes.preloader}>
+            <img src={preloader}></img>
+         </div>
       </div>
    )
 }

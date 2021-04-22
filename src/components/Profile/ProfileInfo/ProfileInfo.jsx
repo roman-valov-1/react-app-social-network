@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
       setEditMode(false);
       props.saveProfile(formData);
    }
-
+   
    if (!props.profile) {
       return <Preloader />
    }

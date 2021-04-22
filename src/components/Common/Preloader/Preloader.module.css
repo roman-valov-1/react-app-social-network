@@ -1,9 +1,13 @@
-.preloader {
-   padding: 50px 50% 0px 45%;
+.preloaderContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
 }
-
-@media (max-width: 575.98px) {
-   .preloader {
-      padding: 50px 50% 0px 40%;
-   }
+.preloader {
+   width: 64px;
+   height: 64px;
+}
+.preloader img {
+   width: 100%;
 }
