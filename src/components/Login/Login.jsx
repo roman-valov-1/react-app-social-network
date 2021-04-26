@@ -15,13 +15,18 @@ const LoginForm = (props) => (
       onSubmit={props.onSubmit}
       render={({ handleSubmit }) => (
          <form onSubmit={handleSubmit}>
+            <div>
+               Данные для входа в тестовый аккаунт:
+               <p>Email: free@samuraijs.com</p>
+               <p>Password: free</p>
+            </div>
             <div className={classes.item}>
-               Email: <Field name="Email" component={Input} placeholder="Email"
-                  value="free@samuraijs.com" validate={required} />
+               Email: <Field name="Email" component={Input} placeholder="Email" 
+                  validate={required} />
             </div>
             <div className={classes.item}>
                Password: <Field name="Password" component={Input} type="password" placeholder="Password"
-                  value="free" validate={required} />
+                  validate={required} />
             </div>
             <div className={classes.itemCheckbox}>
                <Field name="RememberMe" component={Input} type="checkbox" /> <span>Remember me</span>
