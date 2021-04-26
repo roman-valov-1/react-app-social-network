@@ -17,11 +17,11 @@ const LoginForm = (props) => (
          <form onSubmit={handleSubmit}>
             <div className={classes.item}>
                Email: <Field name="Email" component={Input} placeholder="Email"
-                  validate={required} />
+                  value="free@samuraijs.com" validate={required} />
             </div>
             <div className={classes.item}>
                Password: <Field name="Password" component={Input} type="password" placeholder="Password"
-                  validate={required} />
+                  value="free" validate={required} />
             </div>
             <div className={classes.itemCheckbox}>
                <Field name="RememberMe" component={Input} type="checkbox" /> <span>Remember me</span>
